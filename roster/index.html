@@ -3,7 +3,7 @@
 <title>Roster</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
-<style>:root { --accent: #D4AF37; --glow: #D4AF37; --bg1: #0d0d10; --bg2: #1d1a14; }
+<style>:root { --accent: #A9C4F5; --glow: #C8A2F0; --bg1: #070912; --bg2: #151a36; }
 
 :root { color-scheme: dark; }
 * { box-sizing: border-box; }
@@ -165,6 +165,9 @@ table.ledger { width: 100%; border-collapse: collapse; font-size: 16px; margin-t
 .hourlabels span:nth-child(odd) { visibility: hidden; }
 .scale { display: flex; align-items: center; gap: 4px; font-size: 13px; opacity: .8; margin-top: 6px; justify-content: flex-end; }
 .scale i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; background: var(--accent); }
+
+.has-scene .shade::after { content: ""; position: absolute; inset: 0; background: #3b4f9a; mix-blend-mode: color; opacity: .55; }
+h1 { text-shadow: 0 0 26px color-mix(in srgb, var(--glow) 45%, transparent); }
 </style></head>
 <body class="has-scene"><div class="scenes" aria-hidden="true"><div class="scene" style="background-image:url('../images/home.jpg')"></div><div class="shade"></div><div class="motes"></div></div>
 <div class="wrap"><a class="crumb" href="../">&larr; All characters</a>
