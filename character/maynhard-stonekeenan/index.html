@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maynhard Stonekeenan · Warrior</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>:root { --accent: #C69B6D; --glow: #E0563B; --bg1: #110c09; --bg2: #24160f; }
+
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; color: #e8e2d6; background: var(--bg1);
+  background-image: radial-gradient(ellipse at 50% -10%, color-mix(in srgb, var(--accent) 28%, transparent), transparent 60%),
+                    radial-gradient(ellipse at 85% 110%, color-mix(in srgb, var(--glow) 14%, transparent), transparent 55%),
+                    linear-gradient(180deg, var(--bg2), var(--bg1));
+  background-attachment: fixed;
+  font: 18px/1.7 "EB Garamond", Georgia, "Times New Roman", serif; }
+a { color: var(--accent); }
+.wrap { max-width: 860px; margin: 0 auto; padding: 32px 16px 80px; }
+.crumb { font: 14px/1 "Cinzel", Georgia, serif; letter-spacing: .12em; text-transform: uppercase; text-decoration: none; opacity: .8; }
+.crumb:hover { opacity: 1; }
+h1, h2, .classname { font-family: "Cinzel", Georgia, serif; font-weight: 600; }
+h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.1; margin: 28px 0 6px; color: var(--accent);
+  text-shadow: 0 0 24px color-mix(in srgb, var(--accent) 55%, transparent); }
+.classname { letter-spacing: .25em; text-transform: uppercase; font-size: 14px; color: var(--glow); }
+.motto { font-style: italic; opacity: .75; margin: 4px 0 0; }
+.tagline { font-size: 20px; margin: 18px 0 0; }
+.sheet { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 32px 0;
+  background: color-mix(in srgb, var(--bg1) 88%, var(--accent)); border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); border-radius: 6px; overflow: hidden; }
+.sheet div { padding: 12px 16px; box-shadow: inset -1px -1px 0 color-mix(in srgb, var(--accent) 30%, transparent); }
+.sheet dt { font: 12px/1.4 "Cinzel", Georgia, serif; letter-spacing: .15em; text-transform: uppercase; color: var(--accent); }
+.sheet dd { margin: 2px 0 0; }
+section { margin-top: 44px; }
+h2 { font-size: 24px; color: var(--accent); margin: 0 0 12px; padding-bottom: 8px; display: flex; align-items: center; gap: 14px; }
+h2::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 70%, transparent), transparent); }
+p { margin: 0 0 1em; }
+h3 { font: 600 19px/1.3 "Cinzel", Georgia, serif; color: var(--glow); margin: 1.6em 0 .5em; letter-spacing: .04em; }
+h3:first-of-type { margin-top: .4em; }
+ul { padding-left: 1.2em; } li { margin-bottom: .6em; } li::marker { color: var(--glow); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 32px; }
+.card { display: block; text-decoration: none; color: inherit; padding: 20px; border-radius: 8px;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--c) 18%, #0d0d10), #0d0d10 70%);
+  border: 1px solid color-mix(in srgb, var(--c) 50%, transparent); transition: transform .15s, box-shadow .15s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 28px color-mix(in srgb, var(--c) 35%, transparent); }
+.card strong { display: block; font: 600 22px/1.2 "Cinzel", Georgia, serif; color: var(--c); }
+.card span { font: 12px/1.4 "Cinzel", Georgia, serif; letter-spacing: .2em; text-transform: uppercase; opacity: .8; }
+.card p { margin: 10px 0 0; font-size: 16px; opacity: .85; }
+.empty { opacity: .7; font-style: italic; }
+.scenes { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+.scene { position: absolute; inset: 0; background: center 30% / cover no-repeat; }
+.has-scene .shade { position: absolute; inset: 0;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg1) 10%, transparent) 0%, color-mix(in srgb, var(--bg1) 35%, transparent) 45%, color-mix(in srgb, var(--bg1) 80%, transparent) 100%),
+              radial-gradient(ellipse at 50% 60%, transparent 40%, color-mix(in srgb, var(--bg1) 70%, transparent)),
+              radial-gradient(ellipse 55% 40% at 25% 22%, color-mix(in srgb, var(--bg1) 60%, transparent), transparent); }
+.has-scene .motes { position: absolute; inset: -200px 0 0; opacity: .55;
+  background-image: radial-gradient(circle, var(--glow) 0 1.5px, transparent 2.5px), radial-gradient(circle, var(--accent) 0 1px, transparent 2px),
+                    radial-gradient(circle, var(--glow) 0 1px, transparent 2px), radial-gradient(circle, #fff 0 .8px, transparent 1.5px);
+  background-size: 197px 263px, 311px 173px, 389px 331px, 131px 419px; background-position: 23px 41px, 157px 9px, 301px 207px, 71px 163px;
+  animation: drift 40s linear infinite; }
+@keyframes drift { to { transform: translateY(-200px); } }
+@media (prefers-reduced-motion: reduce) { .has-scene .motes { animation: none; } }
+.has-scene .wrap { position: relative; }
+.has-scene header.intro { min-height: calc(100vh - 140px); padding-top: 2vh; }
+.has-scene header.intro .tagline { max-width: 34em; }
+.has-scene header.intro h1, .has-scene header.intro p { text-shadow: 0 2px 6px #000, 0 0 20px #000; }
+.panel { padding: 8px 0 0; }
+.has-scene .panel { background: color-mix(in srgb, var(--bg1) 78%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); border-radius: 10px; padding: 8px 32px 32px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+.has-scene .panel .sheet { margin-top: 24px; }
+.has-scene .card { background: color-mix(in srgb, #0d0d10 80%, transparent); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+@media (max-width: 600px) { .has-scene .panel { padding: 4px 16px 20px; } }
+.card img { display: block; width: calc(100% + 40px); margin: -20px -20px 14px; aspect-ratio: 1200 / 420; object-fit: cover; border-radius: 8px 8px 0 0; }
+
+.nav { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 18px 0 0; font: 13px/1.4 "Cinzel", Georgia, serif; letter-spacing: .14em; text-transform: uppercase; }
+.nav a { text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); padding-bottom: 2px; }
+.nav a:hover { border-color: var(--accent); }
+.demo-note { margin: 18px 0 0; padding: 10px 14px; border: 1px dashed color-mix(in srgb, var(--glow) 60%, transparent); border-radius: 6px; font-size: 15px; background: color-mix(in srgb, var(--bg1) 75%, transparent); }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin: 14px 0 0; }
+.tile { padding: 10px 14px; border-radius: 6px; background: color-mix(in srgb, var(--bg1) 70%, var(--accent) 6%);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); }
+.tile b { display: block; font: 600 22px/1.25 "Cinzel", Georgia, serif; color: var(--glow); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.tile small { font: 11px/1.4 "Cinzel", Georgia, serif; letter-spacing: .14em; text-transform: uppercase; opacity: .8; }
+.tile.wide { grid-column: span 2; } .tile.wide b { font-size: 18px; }
+@media (max-width: 420px) { .tile.wide { grid-column: auto; } }
+.fine { font-size: 14px; opacity: .7; margin-top: 10px; }
+.milestones { margin: 12px 0 0; padding: 0; list-style: none; font-size: 15px; }
+.milestones li { margin: 0 0 2px; } .milestones b { color: var(--glow); font-weight: normal; }
+.up { color: #7FD88A; } .down { color: #E8776A; }
+table.ledger { width: 100%; border-collapse: collapse; font-size: 16px; margin-top: 6px; }
+.ledger th { font: 11px/1.4 "Cinzel", Georgia, serif; letter-spacing: .14em; text-transform: uppercase; text-align: left; color: var(--accent); padding: 6px 8px; border-bottom: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); }
+.ledger td { padding: 6px 8px; border-bottom: 1px solid color-mix(in srgb, var(--accent) 14%, transparent); vertical-align: top; }
+.ledger .n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ledger td small { display: block; opacity: .65; font-size: 13px; }
+.scroll { overflow-x: auto; }
+.quote { font-size: 20px; font-style: italic; border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; margin: 22px 0 0; }
+.quote p { margin: 0 0 .5em; } .quote cite { display: block; font: 12px/1.4 "Cinzel", Georgia, serif; font-style: normal; letter-spacing: .16em; text-transform: uppercase; opacity: .75; }
+.fortune { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 22px; margin-top: 8px; }
+.fortune .big { font: 600 clamp(34px, 7vw, 54px)/1.1 "Cinzel", Georgia, serif; color: var(--accent); text-shadow: 0 0 22px color-mix(in srgb, var(--accent) 45%, transparent); }
+.chart { width: 100%; height: auto; display: block; margin-top: 12px; }
+.bars { display: grid; gap: 8px; margin-top: 8px; }
+.bar { display: grid; grid-template-columns: minmax(110px, 180px) 1fr auto; gap: 12px; align-items: center; font-size: 16px; }
+.bar i { display: block; height: 10px; border-radius: 5px; background: linear-gradient(90deg, var(--c, var(--accent)), color-mix(in srgb, var(--c, var(--accent)) 50%, transparent)); }
+.bar .n { font-variant-numeric: tabular-nums; }
+@media (max-width: 520px) { .bar { grid-template-columns: 1fr auto; } .bar i { grid-column: 1 / -1; order: 3; } }
+.roster { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 10px; }
+.who { padding: 16px 18px; border-radius: 8px; border: 1px solid color-mix(in srgb, var(--c) 50%, transparent);
+  background: linear-gradient(160deg, color-mix(in srgb, var(--c) 16%, #0d0d10), color-mix(in srgb, #0d0d10 85%, transparent) 70%); }
+.who h3 { margin: 0; font-size: 20px; color: var(--c); } .who h3 a { color: inherit; text-decoration: none; } .who h3 a:hover { text-decoration: underline; }
+.who .cls { font: 11px/1.4 "Cinzel", Georgia, serif; letter-spacing: .16em; text-transform: uppercase; opacity: .85; }
+.who dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin: 10px 0 0; font-size: 15px; }
+.who dt { opacity: .65; } .who dd { margin: 0; font-variant-numeric: tabular-nums; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.chips span { font-size: 13px; padding: 1px 9px; border-radius: 10px; border: 1px solid color-mix(in srgb, var(--c, var(--accent)) 45%, transparent); }
+.zones { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 18px; margin-top: 10px; }
+@media (max-width: 400px) { .zones { grid-template-columns: 1fr; } }
+.zone { padding: 14px 16px 16px; border-radius: 8px; border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); background: color-mix(in srgb, var(--bg1) 80%, transparent); }
+.zone h3 { margin: 0 0 2px; } .zone p { margin: 0; font-size: 15px; opacity: .85; }
+.zone svg { width: 100%; height: auto; display: block; margin: 10px 0; border-radius: 4px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 15px; margin-top: 10px; }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; background: var(--dot); vertical-align: 0; }
+
+.reps { display: grid; gap: 10px; margin-top: 8px; }
+.rep { display: grid; grid-template-columns: minmax(120px, 200px) 1fr; gap: 4px 14px; align-items: center; font-size: 16px; }
+.rep .meter { position: relative; height: 18px; border-radius: 9px; background: color-mix(in srgb, #fff 8%, transparent); overflow: hidden; }
+.rep .meter i { position: absolute; inset: 0 auto 0 0; background: var(--s); opacity: .85; border-radius: 9px; }
+.rep .meter span { position: relative; display: block; padding: 0 10px; font-size: 13px; line-height: 18px; color: #fff; text-shadow: 0 1px 2px #000; }
+.rep small { grid-column: 2; font-size: 13px; opacity: .65; margin-top: -2px; }
+@media (max-width: 520px) { .rep { grid-template-columns: 1fr; } .rep small { grid-column: 1; } }
+.faction { padding: 14px 16px; border-radius: 8px; border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); background: color-mix(in srgb, var(--bg1) 80%, transparent); }
+.faction h3 { margin: 0 0 8px; }
+.faction .rep { grid-template-columns: 1fr; gap: 2px; }
+.faction .rep small { grid-column: 1; margin: 0; }
+.factions { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; margin-top: 8px; }
+@media (max-width: 400px) { .factions { grid-template-columns: 1fr; } }
+
+.album { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 10px; }
+.album figure { margin: 0; border-radius: 8px; overflow: hidden; border: 1px solid color-mix(in srgb, var(--c, var(--accent)) 45%, transparent);
+  background: color-mix(in srgb, var(--bg1) 85%, transparent); }
+.album a.pic { display: block; aspect-ratio: 16 / 9; background: #000; }
+.album img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s; }
+.album a.pic:hover img { transform: scale(1.03); }
+.album figcaption { padding: 8px 12px 10px; font-size: 15px; line-height: 1.35; }
+.album figcaption b { display: block; color: var(--glow); font-weight: normal; font-size: 17px; }
+.album figcaption small { display: block; opacity: .7; font-size: 13px; }
+.album .kind { font: 10px/1.4 "Cinzel", Georgia, serif; letter-spacing: .16em; text-transform: uppercase; color: var(--c, var(--accent)); }
+.album.small { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.filter { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.filter a { font-size: 14px; padding: 2px 12px; border-radius: 12px; text-decoration: none; border: 1px solid color-mix(in srgb, var(--c, var(--accent)) 50%, transparent); color: var(--c, var(--accent)); }
+.filter a[aria-current] { background: color-mix(in srgb, var(--c, var(--accent)) 22%, transparent); }
+.board td.mark { text-align: center; white-space: nowrap; }
+.board .yes { color: #7FD88A; font-size: 18px; } .board .no { opacity: .35; } .board .part { color: #E6C35C; font-size: 14px; }
+.board th.mark { text-align: center; padding: 6px 4px; }
+.board td:first-child { white-space: nowrap; }
+.lock { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-top: 10px; }
+.lock article { padding: 12px 14px; border-radius: 8px; border: 1px solid color-mix(in srgb, var(--c) 45%, transparent); background: color-mix(in srgb, var(--bg1) 82%, transparent); }
+.lock h3 { margin: 0 0 6px; font-size: 18px; color: var(--c); }
+.lock ul { list-style: none; margin: 0; padding: 0; font-size: 15px; }
+.lock li { display: flex; justify-content: space-between; gap: 10px; padding: 2px 0; border-bottom: 1px solid color-mix(in srgb, var(--accent) 12%, transparent); }
+.lock li span:last-child { font-variant-numeric: tabular-nums; white-space: nowrap; opacity: .85; }
+.lock .ready { color: #7FD88A; opacity: 1 !important; }
+.cal { width: 100%; height: auto; display: block; margin-top: 12px; }
+.cal text { font: 11px "EB Garamond", Georgia, serif; fill: currentColor; opacity: .7; }
+.hours { display: grid; grid-template-columns: repeat(24, 1fr); gap: 3px; align-items: end; height: 120px; margin-top: 12px; }
+.hours i { display: block; background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 35%, transparent)); border-radius: 3px 3px 0 0; min-height: 2px; }
+.hourlabels { display: grid; grid-template-columns: repeat(24, 1fr); gap: 3px; font-size: 11px; opacity: .65; text-align: center; }
+.hourlabels span:nth-child(odd) { visibility: hidden; }
+.scale { display: flex; align-items: center; gap: 4px; font-size: 13px; opacity: .8; margin-top: 6px; justify-content: flex-end; }
+.scale i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; background: var(--accent); }
+</style></head>
+<body class="has-scene"><div class="scenes" aria-hidden="true"><div class="scene" style="background-image:url('../../images/maynhard-stonekeenan-portrait.png')"></div><div class="shade"></div><div class="motes"></div></div>
+<div class="wrap"><a class="crumb" href="../../">&larr; All characters</a>
+<header class="intro">
+<h1>Maynhard Stonekeenan</h1>
+<p class="classname">Warrior</p>
+<p class="motto">Steel and resolve</p>
+<p class="tagline">The quiet middle son of a mercenary clan, out seeing the world one contract at a time.</p>
+</header>
+<div class="panel">
+<dl class="sheet"><div><dt>Race</dt><dd>Skyborne</dd></div><div><dt>Age</dt><dd>Early forties</dd></div><div><dt>Profession</dt><dd>Mercenary, shield for hire</dd></div><div><dt>Residence</dt><dd>Arathi Highlands</dd></div><div><dt>Drink of choice</dt><dd>Whatever ale or mead is within reach</dd></div></dl>
+
+
+<section><h2>Appearance</h2><p>Maynhard is a broad, solid Skyborne in his early forties, with olive skin weathered by years of wind and road, and brown hair he keeps short enough that it never gets in his eyes. For a man who has fought most of his life, he carries surprisingly few marks. There are no visible scars on him, which his brothers put down to luck and Maynhard puts down to a good shield. His sword and shield are plain, well kept and clearly used. Tucked somewhere on him, usually inside his gauntlet or knotted at his belt, is a small, faded piece of cloth bearing his family&#x27;s crest.</p></section><section><h2>Biography</h2><p>The Stonekeenans have sold their swords for as long as anyone in the family can remember. Back in the high, windswept country of the Skyborne, the name meant a line that would not break: hire a Stonekeenan, and whatever was behind them stayed safe. It was a family trade, and the family was large. Maynhard grew up the middle of eight children, with six brothers and two sisters, which meant there was always someone to fight and rarely a quiet moment to himself.</p>
+<p>His father taught him the sword and shield in the yard behind the house, and his brothers taught him everything else, mostly by knocking him down. Being in the middle, Maynhard learned early that he couldn&#x27;t out-shout the older ones or out-charm the younger ones, so he learned to watch, wait and hold his ground. The shield suited him. It still does.</p>
+<p>He could have stayed and fought alongside his family for the rest of his life, and no one would have blamed him. Instead, somewhere along the way, he realised that he had spent his whole life defending other people&#x27;s corners of the world without ever seeing any of it. So he left, not angrily, but with every one of his siblings seeing him off, to go and experience life for himself.</p>
+<p>He has settled, as much as a sellsword ever settles, in the Arathi Highlands. It is wide, windy, contested country, and it reminds him of home more than he will admit. There is always work there for a man who can hold a line. He still takes contracts, and he still does them the Stonekeenan way: he shows up, he does the job, and he doesn&#x27;t leave until it&#x27;s done.</p>
+<p>He hasn&#x27;t drifted from his family. He writes, he visits when he can, and he hears about every brother&#x27;s wedding, every sister&#x27;s quarrel and every niece&#x27;s first sword. The scrap of cloth with the family crest goes everywhere he does.</p></section><section><h2>Personality</h2><p>Maynhard is quiet. Years of growing up in a loud house left him comfortable in silence, and he tends to listen far more than he speaks. In a fight, and in most of life, he is focused and steady, the kind of man who notices the exit, the loose floorboard and the person in the corner who hasn&#x27;t touched their drink.</p>
+<p>That doesn&#x27;t mean he&#x27;s grim. Get a few drinks into him, or put him at a table with people he trusts, and the middle child comes out: dry jokes, old family stories, and a laugh that surprises people who have only seen him working. He just doesn&#x27;t waste it on strangers.</p>
+<p>He is loyal to his family, to his employers for as long as the contract lasts, and to his word for longer than that. He came out into the world to see what it has to offer, and he is still curious about all of it, even if he rarely says so out loud.</p></section><section><h2>In character</h2><ul><li>He can usually be found with an ale or a mead in hand, whatever the house has. He isn&#x27;t picky, only thirsty.</li><li>He sits with his back to the wall and his shield within reach, even when he&#x27;s off duty.</li><li>Now and then he takes out a small, faded cloth and runs his thumb over the crest on it before tucking it away again.</li><li>He mentions his brothers and sisters often and casually, and with eight of them, it&#x27;s hard to keep track of who&#x27;s who.</li><li>He doesn&#x27;t say much, but when he does laugh, it&#x27;s loud enough that people turn around.</li></ul></section><section><h2>Every Contract Paid</h2><p><em>The road from level 1 to 60. This part of the story is yet to be written.</em></p></section><section><h2>Sword for Hire, Sworn to None</h2><p><em>Life at level 60. This part of the story is yet to be written.</em></p></section>
+</div></div></body></html>
